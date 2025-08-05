@@ -70,11 +70,9 @@ def main():
             titles[idx], years[idx], ratings[idx],
         ))
 
-        break
-
-        # user_input = input("Would you like to select another movie (y/[n])?")
-        # if user_input.lower() != "y":
-        #     break
+        user_input = input("Would you like to select another movie (y/[n])?")
+        if user_input.lower() != "y":
+            break
 
 
 if __name__ == "__main__":
