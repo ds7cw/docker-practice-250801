@@ -1,0 +1,16 @@
+services:
+  pong:
+    build: ./pong_app
+    networks:
+      - internal
+
+  ping:
+    build: ./ping_client
+    depends_on:
+      - pong
+    networks:
+      - internal
+
+networks:
+  internal:
+    driver: bridge
