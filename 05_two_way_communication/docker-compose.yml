@@ -1,0 +1,14 @@
+services:
+  app_a:
+    build: ./app_a
+    networks:
+      - internal_net
+ 
+  app_b:
+    build: ./app_b
+    networks:
+      - internal_net
+ 
+networks:
+  internal_net:
+    driver: bridge
