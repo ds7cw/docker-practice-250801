@@ -1,14 +1,26 @@
 services:
-  app_a:
-    build: ./app_a
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: server
     networks:
-      - internal_net
- 
-  app_b:
-    build: ./app_b
+      - app-network
+    environment:
+      - PYTHONUNBUFFERED=1
+
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    container_name: client
     networks:
-      - internal_net
- 
+      - app-network
+    depends_on:
+      - server
+    environment:
+      - PYTHONUNBUFFERED=1
+
 networks:
-  internal_net:
+  app-network:
     driver: bridge
