@@ -1,0 +1,10 @@
+services:
+  sqlite-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./app:/app
+    container_name: sqlite-container
+    environment:
+      - PYTHONUNBUFFERED=1
