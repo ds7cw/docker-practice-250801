@@ -8,6 +8,8 @@
 - Score increments when lines are cleared
 - Dockerization so you can run it in a container and stop the container by pressing Quit
 
+<img width="580" height="677" alt="pygame-tetris" src="https://github.com/user-attachments/assets/e7a4889b-a4c3-4ad0-9a7a-279d6800954b" />
+
 GUI apps in containers need access to a display. The Docker setup in this project covers common ways to run Pygame via a host display (X11).
 
 ### File structure
