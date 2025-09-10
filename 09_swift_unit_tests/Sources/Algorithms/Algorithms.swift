@@ -67,3 +67,22 @@ public func bfs(graph: [Int: [Int]], start: Int) -> [Int] {
     }
     return result
 }
+
+
+// Depth-First Search
+public func dfs(graph: [Int: [Int]], start: Int) -> [Int] {
+    var visited: Set<Int> = []
+    var result: [Int] = []
+
+    func visit(_ node: Int) {
+        if visited.contains(node) { return }
+        visited.insert(node)
+        result.append(node)
+        for neighbour in graph[node] ?? [] {
+            visit(neighbour)
+        }
+    }
+
+    visit(start)
+    return result
+}

@@ -23,4 +23,9 @@ final class AlgorithmTests: XCTestCase {
         let graph = [1: [2, 3], 2: [4], 3: [], 4: []]
         XCTAssertEqual(bfs(graph: graph, start: 1), [1, 2, 3, 4])
     }
+
+    func testDFS() {
+        let graph = [1: [2, 3], 2: [4], 3: [], 4: []]
+        XCTAssertEqual(dfs(graph: graph, start: 1), [1, 2, 4, 3])
+    }
 }
